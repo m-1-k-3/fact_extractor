@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 echo "Install Pre-Install Requirements"
 (apt-get update && apt-get install sudo) || true
 

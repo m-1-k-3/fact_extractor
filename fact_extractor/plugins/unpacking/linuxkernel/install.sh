@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 echo "------------------------------------"
 echo "     install liblz4-tools, zstd     "
 echo "------------------------------------"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 echo "------------------------------------"

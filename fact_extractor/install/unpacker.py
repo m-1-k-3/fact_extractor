@@ -161,7 +161,7 @@ DEPENDENCIES = {
             # binwalk
             'pyqtgraph',
             'capstone',
-            'cstruct',
+            'cstruct==1.8',
             'python-lzo',
             'numpy',
             'scipy',

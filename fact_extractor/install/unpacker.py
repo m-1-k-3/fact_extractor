@@ -168,7 +168,7 @@ DEPENDENCIES = {
             'git+https://github.com/jrspruitt/ubi_reader@v0.6.3-master'  # pinned as broken currently
         ],
         'github': [
-            ('devttys0/sasquatch', ['CFLAGS=-fcommon ./build.sh -y']),
+            ('devttys0/sasquatch', ['CFLAGS="-fcommon -Wno-misleading-indentation" ./build.sh -y']),
             ('ReFirmLabs/binwalk', ['sudo python3 setup.py install']),
             ('svidovich/jefferson-3', ['sudo python3 setup.py install'])
         ]

@@ -19,6 +19,7 @@ DEPENDENCIES = {
     # Ubuntu
     'xenial': {
         'apt': [
+            'nomarch',
             # binwalk
             'cramfsprogs',
             'libqt4-opengl',
@@ -32,6 +33,7 @@ DEPENDENCIES = {
     },
     'bionic': {
         'apt': [
+            'nomarch',
             # binwalk
             'libqt4-opengl',
             'python3-pyqt4',
@@ -43,6 +45,7 @@ DEPENDENCIES = {
     },
     'focal': {
         'apt': [
+            'nomarch',
             # binwalk
             'libqt5opengl5',
             'python3-pyqt5',
@@ -55,6 +58,7 @@ DEPENDENCIES = {
     # Debian
     'buster': {
         'apt': [
+            'nomarch',
             # binwalk
             'libqt4-opengl',
             'python3-pyqt4',
@@ -66,6 +70,7 @@ DEPENDENCIES = {
     },
     'bullseye': {
         'apt': [
+            'nomarch',
             # binwalk
             'libqt5opengl5',
             'python3-pyqt5',
@@ -131,7 +136,6 @@ DEPENDENCIES = {
             'unrar',
             'unzip',
             'gzip',
-            'nomarch',
             'flac',
             'unace',
             'sharutils',
@@ -204,6 +208,9 @@ def main(distribution):
     if distribution == "kali" and os.path.isdir("/opt/firmware-mod-kit"):
         logging.info('Kali Linux - copy binaries from installed firmware-mod-kit ...')
         os.system('cp /opt/firmware-mod-kit/trunk/src/yaffs2utils/unyaffs2 /opt/firmware-mod-kit/trunk/src/untrx /opt/firmware-mod-kit/trunk/src/tpl-tool/src/tpl-tool ../bin/')
+        logging.info('Kali Linux - getting nomarch from other source ...')
+        os.system('wget --no-check-certificate http://ftp.halifax.rwth-aachen.de/kali/pool/main/n/nomarch/nomarch_1.4-4_amd64.deb -O /tmp/nomarch_1.4-4_amd64.deb')
+        os.system('dpkg -i /tmp/nomarch_1.4-4_amd64.deb')
     else:
         logging.info('No Kali Linux - install firmware-mod-kit from github')
         install_github_project('rampageX/firmware-mod-kit', ['(cd src && sh configure && make)', 'cp src/yaffs2utils/unyaffs2 src/untrx src/tpl-tool/src/tpl-tool ../../bin/'])

@@ -209,7 +209,7 @@ def main(distribution):
         logging.info('Kali Linux - copy binaries from installed firmware-mod-kit ...')
         os.system('cp /opt/firmware-mod-kit/trunk/src/yaffs2utils/unyaffs2 /opt/firmware-mod-kit/trunk/src/untrx /opt/firmware-mod-kit/trunk/src/tpl-tool/src/tpl-tool ../bin/')
         logging.info('Kali Linux - getting nomarch from other source ...')
-        os.system('wget --no-check-certificate http://ftp.halifax.rwth-aachen.de/kali/pool/main/n/nomarch/nomarch_1.4-4_amd64.deb -O /tmp/nomarch_1.4-4_amd64.deb')
+        os.system('wget --no-check-certificate http://ftp.de.debian.org/debian/pool/main/n/nomarch/nomarch_1.4-4_amd64.deb -O /tmp/nomarch_1.4-4_amd64.deb')
         os.system('dpkg -i /tmp/nomarch_1.4-4_amd64.deb')
     else:
         logging.info('No Kali Linux - install firmware-mod-kit from github')

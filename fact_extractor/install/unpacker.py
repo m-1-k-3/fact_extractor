@@ -158,7 +158,7 @@ DEPENDENCIES = {
         'pip3': [
             'pluginbase',
             'git+https://github.com/armbues/python-entropy',  # To be checked. Original dependency was deleted.
-            'git+https://github.com/fkie-cad/common_helper_unpacking_classifier.git',
+            #'git+https://github.com/fkie-cad/common_helper_unpacking_classifier.git',
             'git+https://github.com/fkie-cad/fact_helper_file.git',
             'patool',
             'archmage',
